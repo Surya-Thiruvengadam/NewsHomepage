@@ -1,0 +1,239 @@
+@font-face {
+  font-family: myfont;
+  src: url("/assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+:root {
+  --Softorange: hsl(35, 77%, 62%);
+  --Softred: hsl(5, 85%, 63%);
+  --Offwhite: hsl(36, 100%, 99%);
+  --Grayishblue: hsl(233, 8%, 79%);
+  --Darkgrayishblue: hsl(236, 13%, 42%);
+  --Verydarkblue: hsl(240, 100%, 5%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+.sugg-artical-content a:hover {
+  color: var(--Softred);
+}
+body {
+  background-color: var(--Offwhite);
+  padding: 4rem;
+  font-family: myfont;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+}
+header > * {
+  flex: 1;
+}
+.logo img {
+  width: 3rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a {
+  color: var(--Darkgrayishblue);
+}
+
+#toggle {
+  top: 1rem;
+  right: 2rem;
+  padding: 10px;
+  width: 3rem;
+  max-width: 3rem;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--Verydarkblue);
+  display: none;
+}
+button span {
+  margin: 4px auto;
+  border: 1px solid var(--Grayishblue);
+  display: block;
+  width: 100%;
+  transition: 1s;
+}
+
+.grid-container-main {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+  gap: 2.5rem;
+}
+
+figure {
+  grid-column: 1 / span 2;
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.new-suggestion-articals {
+  grid-row: 1 / span 2;
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  background-color: var(--Verydarkblue);
+  padding: 2rem;
+}
+
+.new-suggestion-articals h1 {
+  color: var(--Softorange);
+  font-size: 2rem;
+}
+
+.new-articals a {
+  color: var(--Offwhite);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+
+.new-articals a:hover {
+  color: var(--Softorange);
+}
+
+.new-articals p {
+  color: var(--Grayishblue);
+  line-height: 1.4;
+}
+
+.News-header {
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.news-content p {
+  color: var(--Verydarkblue);
+  line-height: 1.5em;
+  font-weight: 500;
+}
+
+.news-content button {
+  margin-top: 5em;
+  background-color: var(--Verydarkblue);
+  color: var(--Offwhite);
+  padding: 1em 1.5em;
+  border: none;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+.news-content button:hover {
+  background-color: var(--Softred);
+}
+.suggestion-artical {
+  display: flex;
+  gap: 1rem;
+}
+
+.suggestion-artical img {
+  grid-row: 1 / span 3;
+  width: 23%;
+}
+
+.sugg-artical-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.sugg-artical-content h1 {
+  color: var(--Grayishblue);
+}
+
+.sugg-artical-content a {
+  color: var(--Verydarkblue);
+  font-weight: 800;
+}
+
+.sugg-artical-content p {
+  color: var(--Grayishblue);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 1300px) {
+  :root {
+    font-size: 14px;
+  }
+  .grid-container-main {
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(6, auto);
+    gap: 2rem;
+  }
+  .new-suggestion-articals {
+    grid-row: 2 / span 3;
+    grid-column: 2;
+  }
+  .nav-container {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.371);
+  }
+  nav {
+    padding: 2rem;
+    background-color: white;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    float: right;
+    height: 100vh;
+    width: max(40%, 280px);
+  }
+
+  #toggle {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid-container-main {
+    display: flex;
+    flex-direction: column;
+  }
+  body {
+    padding: 1rem;
+  }
+}
+
+/* @media screen and (min-width:600px) {
+    .grid-container-main{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,auto);
+    }
+    
+    .new-suggestion-articals{
+        grid-row: span;
+        grid-column: 2;
+        grid-row: 2/span 2;
+    }
+} */
+
